@@ -12,7 +12,6 @@ header {
   text-align: center;
   font-size: 2em;
   letter-spacing: 2px;
-  animation: fadeIn 1s ease-out;
 }
 nav {
   display: flex;
@@ -33,17 +32,43 @@ nav a {
 nav a:hover {
   color: #ff0055;
 }
-section {
-  padding: 60px 20px;
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url('images/фон.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  animation: fadeInUp 1s ease-out;
-}
-.parallax {
-  background-image: url('https://images.unsplash.com/photo-1580202771162-90888e63b93c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
   color: #fff;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.animated-text {
+  font-size: 2.5em;
+  font-weight: bold;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+}
+.subtext {
+  font-size: 1.5em;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInSubtext 5s ease forwards;
 }
 .cta-button {
   background: #ff0055;
@@ -74,11 +99,11 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
-.work-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff0055;
+.work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 footer {
   background: #1a1a1a;
@@ -95,7 +120,6 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
@@ -116,11 +140,14 @@ footer {
 .close:hover {
   color: #fff;
 }
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
+@keyframes blink {
+  50% { border-color: transparent }
+}
+@keyframes fadeInSubtext {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
