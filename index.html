@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Ink Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Dark Ink Studio</header>
+
+<nav>
+  <a href="#about">О студии</a>
+  <a href="#works">Наши работы</a>
+  <a href="#contact">Записаться</a>
+</nav>
+
+<section id="about" class="hero-section">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1 class="animated-text">Твоя история — на коже.</h1>
+    <p class="subtext">Каждая линия — отражение твоей свободы.</p>
+    <button class="cta-button" onclick="openModal()">Записаться</button>
+  </div>
+</section>
+
+<section id="works">
+  <h2>Наши работы</h2>
+  <div class="works-gallery">
+    <div class="work-item"><img src="images/work1.png" alt="Татуировка 1"></div>
+    <div class="work-item"><img src="images/work2.png" alt="Татуировка 2"></div>
+    <div class="work-item"><img src="images/work3.png" alt="Татуировка 3"></div>
+    <div class="work-item"><img src="images/work4.png" alt="Татуировка 4"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Связаться с нами</h2>
+  <p>Позвоните нам или напишите в мессенджер, чтобы обсудить вашу идею!</p>
+  <button class="cta-button" onclick="openModal()">Оставить заявку</button>
+</section>
+
+<footer>
+  © 2025 Dark Ink Studio. Все права защищены.
+</footer>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Заполните заявку</h3>
+    <p>Свяжемся с вами в ближайшее время!</p>
+    <button class="cta-button" onclick="window.location.href='tel:+70000000000'">Позвонить</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
